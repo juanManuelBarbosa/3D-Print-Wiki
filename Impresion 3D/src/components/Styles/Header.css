@@ -1,0 +1,11 @@
+.tittleHeader{
+    font-size: 33px;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+.descriptionHeader{
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+}
