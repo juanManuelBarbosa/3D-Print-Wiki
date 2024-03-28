@@ -1,0 +1,13 @@
+/*Estilos del Logo*/
+.LogoContainer{
+    display: flex;
+    align-items: center;
+    width: 300px;
+   
+}
+.logoImg{
+    width: 30%;
+}
+.LogoDescription{
+    font-size: 12px
+}

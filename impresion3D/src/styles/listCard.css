@@ -1,0 +1,10 @@
+.ContainerCards{
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 15px auto ;
+    width: 90%;  
+}
+
+
+
