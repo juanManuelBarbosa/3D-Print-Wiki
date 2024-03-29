@@ -3,7 +3,7 @@ import { useState , useEffect } from 'react'
 import Card from './Card'
 import data from './Problems.json'
 import '../styles/listCard.css'
-
+import Modal from './Modal'
 const ListOfProblems = ()=>{
     const [ProblemsData, setProblemsData] = useState([])
 
@@ -12,16 +12,12 @@ const ListOfProblems = ()=>{
     },[])
 
     return <>
-    <div className='ContainerCards flex '>
-    {ProblemsData.map((problem, index)=>(  
+    <div className='ContainerCards  '>
+    
+    {ProblemsData.map((problem, index)=>( 
+       
+        <Modal titulo={problem.titulo} imagen={problem.imagen} key={index}/>
         
-        <Card 
-        key={index}
-        titulo={problem.titulo} 
-        soluciones={problem.soluciones} 
-        imagen={problem.imagen} 
-        className="card"
-       / >
     
     ))}
     </div>

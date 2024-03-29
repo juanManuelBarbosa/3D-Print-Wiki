@@ -1,12 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure} from "@nextui-org/react";
-
-export default function App() {
+import Card from './Card'
+export default function ModalApp({titulo, imagen}) {
   const {isOpen, onOpen, onOpenChange} = useDisclosure();
 
   return (
     <>
-      <Button onPress={onOpen}>Open Modal</Button>
+    <Button onPress={onOpen} className=" h-auto m-3 p-0 bg-transparent  "  >
+        <Card 
+        titulo={titulo} 
+        soluciones={"soluciones"} 
+        imagen={imagen} 
+        className="card"
+       / > 
+    </Button>
+    
       <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
         <ModalContent>
           {(onClose) => (

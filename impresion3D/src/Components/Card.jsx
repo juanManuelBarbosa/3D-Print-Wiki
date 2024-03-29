@@ -1,22 +1,22 @@
 import React from "react";
-import {Card, CardHeader, CardBody, Image} from "@nextui-org/react";
+import {Card, CardFooter, Image, Button} from "@nextui-org/react";
 
 export default function App(props) {
   return (
-    <Card className=" p-5 m-2 items-center flex-col " >
-      <CardHeader className="pb-0 pt-2  flex-col items-center">
-        <p className="text-tiny uppercase font-bold">Tipo de error</p>
-        
-        <h4 className="font-bold text-center text-large text-wrap w-40 ">{props.titulo}</h4>
-      </CardHeader>
-      <CardBody className="overflow-visible py-2" >
-        <Image
-          alt="Card background"
-          className="object-cover rounded-xl size-40"
-          src={props.imagen}
-          width={270}
-        />
-      </CardBody>
+    <Card
+      isFooterBlurred
+      radius="lg"
+      className="p-0.5 bg-slate-800  shadow-md"
+    >
+      <Image
+        alt={props.titulo}
+        className="object-cover  size-48  "  
+        src={props.imagen}  
+      />
+      <CardFooter className="justify-center bg-gradient-to-r from-fuchsia-950 to-fuchsia-700 before:bg-white/100  overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10 ">
+        <p className="text-tiny text-white/80 ">{props.titulo}</p>
+      </CardFooter>
     </Card>
+
   );
 }
