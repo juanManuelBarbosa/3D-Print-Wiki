@@ -16,7 +16,7 @@ const ListOfProblems = ()=>{
     
     {ProblemsData.map((problem, index)=>( 
        
-        <Modal titulo={problem.titulo} imagen={problem.imagen} key={index}/>
+        <Modal titulo={problem.titulo} imagen={problem.imagen} soluciones={problem.soluciones} key={index}/>
         
     
     ))}

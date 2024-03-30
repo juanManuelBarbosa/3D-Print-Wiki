@@ -1,5 +1,5 @@
 import React from "react";
-import {Card, CardFooter, Image, Button} from "@nextui-org/react";
+import {Card, CardFooter, Image} from "@nextui-org/react";
 
 export default function App(props) {
   return (
