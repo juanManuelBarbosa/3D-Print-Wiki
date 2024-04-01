@@ -43,7 +43,7 @@ const changeNavValue = (value)=>{
         </NavbarItem>
 
         <NavbarItem>
-          <Link className="text-gray-300 text-sm" href="#">
+          <Link className="text-gray-300 text-sm" onClick={()=>{ changeNavValue('Calculadora De Costos')}}>
             Calculadora de costos
           </Link>
         </NavbarItem>
