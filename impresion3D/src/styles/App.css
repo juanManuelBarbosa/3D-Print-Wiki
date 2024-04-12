@@ -1,3 +1,8 @@
-
+body {
+    font-family: Arial, sans-serif , Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display:flex;
+    flex-direction: column;
+  
+  }
 
 

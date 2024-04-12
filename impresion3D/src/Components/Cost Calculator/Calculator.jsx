@@ -1,14 +1,33 @@
+import {Input} from '@nextui-org/react'
+
+import Navbar from '../Navbar'
+import Footer from '../Footer'
+import Header from '../Header'
+
+
 const Calculator = ()=>{
     return <> 
-                <div className="min-h-screen  bg-gray-900 flex flex-col items-center justify-center relative px-4 mb-4">
-            <div className="absolute top-0 left-0 w-full h-full bg-cover bg-center opacity-30 bg-[url('https://images.unsplash.com/photo-1604093882750-3ed498f3178b')]">
-            
-            </div>
-            <h1 className="text-5xl md:text-7xl text-white font-bold mb-8 z-10">Coming Soon</h1>
-            <p className="text-white text-xl md:text-2xl">
-                Estamos trabajando duro para brindarte esta funcionalidad lo antes posible, estate atento!
-            </p>
-        </div>
+        <Navbar/>
+            <Header headerBanner='https://i.ibb.co/sqS6j03/3.png'   headerText="pequeña calculadora que sirve para establecer un precio adecuado que podes usar de referencia para tus piezas que tiene en cuenta diversos factores como el gasto energetico, el costo de los materiales entre otras cosas "/>
+           <div className='flex gap-2'>
+                <section className='basis-1/2'>
+                    <form action="" className='flex flex-wrap  gap-2 justify-center border '>
+                    <Input type="email" label="Email" size="md" className='w-56' color="black"  />
+                    <Input type="email" label="Email" size="md" className='w-56'  />
+                    <Input type="email" label="Email" size="md" className='w-56'  />
+                    <Input type="email" label="Email" size="md" className='w-56'  />
+                    <Input type="email" label="Email" size="md" className='w-56'  />
+                    <Input type="email" label="Email" size="md" className='w-56'  />
+                    </form> 
+                </section>
+                <section className='basis-1/2 border border-black'>
+                    <h2>response</h2>
+                    <p>Aca voy a crear una lista detallada con el precio el gasto energetico y todo lo necesario</p>
+                </section>
+           </div>
+           
+           
+        <Footer/>
      </>
 }
 
