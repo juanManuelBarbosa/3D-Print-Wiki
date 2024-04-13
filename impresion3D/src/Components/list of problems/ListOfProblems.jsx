@@ -5,10 +5,10 @@ import Modal from './Modal'
 import Header from '../Header'
 import Navbar from '../Navbar'
 import Footer from '../Footer'
-const ListOfProblems = ()=>{
+const ListOfProblems = ({changeTheme})=>{
   
     return <>
-    <Navbar/>
+    <Navbar changeTheme={changeTheme}/>
 
     <Header 
     headerBanner="https://i.ibb.co/Mh6CGs5/1.png" 

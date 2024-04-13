@@ -5,7 +5,7 @@ import Logo from './Logo.jsx'
 import ThemeSwitch from './ThemeSwitch/ThemeSwitch.jsx'
 
 
-export default function Nav() {
+export default function Nav({changeTheme}) {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
  
@@ -65,7 +65,7 @@ export default function Nav() {
 
 
       <NavbarContent >
-          <ThemeSwitch/>  {/* boton para cambiar el tema claro oscuro pendiente.... */}
+          <ThemeSwitch changeTheme={changeTheme}/>  {/* boton para cambiar el tema claro oscuro pendiente.... */}
       </NavbarContent>
 
 

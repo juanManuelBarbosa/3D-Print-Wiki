@@ -3,7 +3,7 @@ import {Switch} from "@nextui-org/react";
 import {MoonIcon} from "./MoonIcon";
 import {SunIcon} from "./SunIcon";
 
-export default function App() {
+export default function ChangeTheme({ changeTheme }) {
   return (
     <Switch
       defaultSelected
@@ -16,8 +16,9 @@ export default function App() {
           <MoonIcon className={className} />
         )
       }
+      onChange={changeTheme}
     >
-     
+    
     </Switch>
   );
 }
