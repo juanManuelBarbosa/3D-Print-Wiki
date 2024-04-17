@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 
-const Header = ({ headerText, headerBanner }) => {
+const Header = ({ headerText, headerBanner , theme }) => {
   return (
     <>
       <motion.img
@@ -11,7 +11,9 @@ const Header = ({ headerText, headerBanner }) => {
         transition={{ duration: 0.5 }}
       />
       <motion.p
-        className="text-[#3d0b40] w-10/12 mx-auto mb-20 mt-5 text-center xl:text-md md:text-md"
+        className={theme === 'light' ?
+        'text-[#3d0b40] w-10/12 mx-auto mb-10 mt-10 text-center xl:text-xl md:text-md' 
+        : 'text-[#fff] w-10/12 mx-auto mb-10 mt-10 text-center xl:text-xl md:text-md'}  //estilos condicionales
         initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5}}

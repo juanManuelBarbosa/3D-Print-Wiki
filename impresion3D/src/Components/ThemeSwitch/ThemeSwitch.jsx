@@ -8,12 +8,12 @@ export default function ChangeTheme({ changeTheme }) {
     <Switch
       defaultSelected
       size="lg"
-      color="secondary"
+      color={"secondary"}
       thumbIcon={({ isSelected, className }) =>
         isSelected ? (
-          <SunIcon className={className} />
-        ) : (
           <MoonIcon className={className} />
+        ) : (
+          <SunIcon className={className} />
         )
       }
       onChange={changeTheme}

@@ -1,42 +1,34 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+
 import Calculator from "../Components/Cost Calculator/Calculator";
 import FrequentQuestions from "../Components/frequent questions/FrequentQuestions";
 import ListOfProblems from "../Components/list of problems/ListOfProblems";
 import Error404 from "../Components/Error404";
 
 
-const MyRoutes = ({changeTheme}) => {
+const MyRoutes = ({changeTheme , theme}) => {
   
-  const [theme, setTheme] = useState("light");
-
-  const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
-    console.log('cambio')
-  };
-
- 
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <ListOfProblems  changeTheme={changeTheme}/>,
+      element: <ListOfProblems  changeTheme={changeTheme} theme={theme}/>,
       errorElement: <Error404 />
     },
     {
       path: "/preguntas-frecuentes",
-      element: <FrequentQuestions />
+      element: <FrequentQuestions changeTheme={changeTheme} theme={theme}/>
     },
     {
       path: "/calculadora-costos",
-      element: <Calculator />
+      element: <Calculator changeTheme={changeTheme} theme={theme} />
     }
   ]);
 
   return (
-    // Envuelve el componente ThemeSwitch con RouterProvider y pasa la función de cambio de tema como prop
     <RouterProvider router={router}>
       
     </RouterProvider>

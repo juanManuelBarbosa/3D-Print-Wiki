@@ -8,9 +8,6 @@ import ThemeSwitch from './ThemeSwitch/ThemeSwitch.jsx'
 export default function Nav({changeTheme}) {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
- 
-
-
   const menuItems = [
     "Gia de Problemas",
     "Preguntas Frecuentes",
