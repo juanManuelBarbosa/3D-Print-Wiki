@@ -1,3 +1,5 @@
+import {motion} from 'framer-motion'
+
 import {Input ,Switch, cn} from '@nextui-org/react'
 
 import Navbar from '../Navbar'
@@ -14,13 +16,95 @@ const Calculator = ({theme, changeTheme})=>{
               />
            <div className='flex gap-2'>
                 <section className='basis-1/2'>
-                    <form action="" className='flex flex-col items-center gap-2 justify-center border '>
-                    <Input type="number" label="Nombre de la pieza" size="md" className='w-56' color="black"  />
-                    <Input type="number" label="Precio bobina (kg)" size="md" className='w-56'  />
-                    <Input type="number" label="Gramos utilizados" size="md" className='w-56'  />
-                    <Input type="number" label="Horas de impresion" size="md" className='w-56'  />
-                    <Input type="number" label="Email" size="md" className='w-56'  /> <Input type="number" label="Email" size="md" className='w-56'  />
+                    <form action=""
+                    className={theme === 'light' ? 
+                    'flex flex-col items-center gap-2 justify-center p-6 m-5 border border-fuchsia-950 border-3 rounded-lg bg-slate-950/40' 
+                    :'flex flex-col items-center gap-2 justify-center p-6 m-5 border border-gray-400 border-3 rounded-lg bg-slate-500/40' }
+                    >
 
+                    
+                    <motion.div
+                    className='w-full rounded-xl'
+                    whileHover={{ scale: 1.03 }}
+                     transition={{ duration: 0.3 }}
+                    >
+                    <Input 
+                    type="number" 
+                    label="Nombre de la pieza"  
+                    className='w-full'  
+                    color='content' 
+                    variant='faded'
+                    classNames={{
+                    label: "text-slate-200",
+                    inputWrapper: "bg-fuchsia-950 border-1 border-slate-800 text-slate-200"} }  />
+                    </motion.div> 
+                    
+                    <motion.div
+                    className='w-full rounded-xl'
+                    whileHover={{ scale: 1.03 }}
+                     transition={{ duration: 0.3 }}
+                    >
+                    <Input 
+                    type="number" 
+                    label="Precio Bobina Kg"  
+                    className='w-full'  
+                    color='content' 
+                    variant='faded'
+                    classNames={{
+                    label: "text-slate-200",
+                    inputWrapper: "bg-fuchsia-950 border-1 border-slate-800 text-slate-200"} }  />
+                    </motion.div> 
+                    
+
+                    <motion.div
+                    className='w-full rounded-xl'
+                    whileHover={{ scale: 1.03 }}
+                     transition={{ duration: 0.3 }}
+                    >
+                    <Input 
+                    type="number" 
+                    label="Gramos utilizados"  
+                    className='w-full'  
+                    color='content' 
+                    variant='faded'
+                    classNames={{
+                    label: "text-slate-200",
+                    inputWrapper: "bg-fuchsia-950 border-1 border-slate-800 text-slate-200"} }  />
+                    </motion.div>   
+                    
+                    <motion.div
+                    className='w-full rounded-xl'
+                    whileHover={{ scale: 1.03 }}
+                     transition={{ duration: 0.3 }}>
+                        <Input 
+                        type="number" 
+                        label="Horas de impresion"  
+                        className='w-full ' 
+                        color='content' 
+                        variant='faded'
+                        classNames={{
+                        label: "text-slate-200",
+                        inputWrapper: "bg-fuchsia-950 border-1 border-slate-800 text-slate-200"} }  />
+                    </motion.div>
+
+                    <motion.div
+                    className='w-full rounded-xl'
+                    whileHover={{ scale: 1.03 }}
+                     transition={{ duration: 0.3 }}>
+                        <Input 
+                        type="number" 
+                        label="Costo extra"  
+                        className='w-full rounded-xl ' 
+                        color='content' 
+                        variant='faded'
+                        classNames={{
+                        label: "text-slate-200",
+                        inputWrapper: "bg-fuchsia-950 border-1 border-slate-800 text-slate-200"} }  
+                        /> 
+                    </motion.div>
+
+                    
+                
                     <Switch
                             color="secondary"
                             classNames={{
@@ -38,8 +122,7 @@ const Calculator = ({theme, changeTheme})=>{
                                 "group-data-[pressed=true]:w-7",
                                 "group-data-[selected]:group-data-[pressed]:ml-4",
                                 ),
-                            }}
-                            >
+                            }}>
                             <div className="flex flex-col gap-1">
                                 <p className="text-medium">¿La pieza esta pintada?</p>
                                 <p className="text-tiny text-default-400">

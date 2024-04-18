@@ -1,18 +1,72 @@
+import { motion } from "framer-motion"
+
+import { FaFacebookSquare } from "react-icons/fa";
+import { BsCart4 } from "react-icons/bs";
+import { FaYoutube , FaTiktok } from "react-icons/fa";
+import { GrInstagram } from "react-icons/gr";
+
+
+
 const Footer = ()=>{
     return <>
     <div className="bg-fuchsia-900 p-1 border-t-2 border-fuchsia-950">
         <div className=" flex auto item-around">
-            <div className="W-1/3  border-t-2 border-slate-900 flex-1 my-1" />
+            <div className="W-1/3  border-t-2 border-gray-300 flex-1 my-1" />
 
             <div className="W-1/3  flex flex-1 justify-around m-0.5">
-                <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/1077/1077042.png"  className="w-6 " alt="" /></a>
-                <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/739/739237.png" className="w-6" alt="" /></a>
-                <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2478/2478188.png" className="w-6" alt="" /></a>
-                <a href="#"><img src="   https://cdn-icons-png.flaticon.com/512/1077/1077046.png " className="w-6" alt="" /></a>
-                <a href="#"><img src="   https://cdn-icons-png.flaticon.com/512/1946/1946552.png " className="w-6" alt="" /></a>
+
+            <motion.a
+                whileHover={{ scale: 1.2 }}
+                onHoverStart={e => {}}
+                onHoverEnd={e => {}}>
+                 <a target="_blank" href="https://www.instagram.com/majora_impresiones/" > 
+                    <GrInstagram className="text-gray-300 text-2xl"/> 
+                </a>
+            </motion.a>
+
+
+
+
+            <motion.a
+                whileHover={{ scale: 1.2 }}
+                onHoverStart={e => {}}
+                onHoverEnd={e => {}}>
+                <a href="https://www.facebook.com/Majora.impresiones" >
+                    <FaFacebookSquare className="text-gray-300 text-2xl m-0 p-0 "/>
+                </a>
+            </motion.a>
+
+            <motion.a
+                whileHover={{ scale: 1.2 }}
+                onHoverStart={e => {}}
+                onHoverEnd={e => {}}>
+                <a href="https://majoraimpresiones.mercadoshops.com.ar/" target="_blank" >
+                    <BsCart4 className="text-gray-300 text-2xl"/> 
+                </a>
+            </motion.a>
+            <motion.a
+                whileHover={{ scale: 1.2 }}
+                onHoverStart={e => {}}
+                onHoverEnd={e => {}}>
+                <a href="https://www.youtube.com/channel/UCvBfuH_wJ9gWJOwoNWyMqrg" target="_blank" > 
+                    <FaYoutube className="text-gray-300 text-2xl"/>
+                </a>
+
+            </motion.a>
+            <motion.a
+                whileHover={{ scale: 1.2 }}
+                onHoverStart={e => {}}
+                onHoverEnd={e => {}}>
+                <a href="https://www.tiktok.com/@majora_impresiones" target="_blank">
+                    <FaTiktok className="text-gray-300 text-2xl"/>
+                </a>
+
+            </motion.a>
+               
+        
             </div>
 
-            <div className="W-1/3  border-t-2  border-slate-900 flex-1 my-1"/>
+            <div className="W-1/3  border-t-2  border--300gray flex-1 my-1"/>
         </div>
 
 
