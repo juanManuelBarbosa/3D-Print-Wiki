@@ -15,36 +15,36 @@ const Footer = ()=>{
 
             <div className="W-1/3  flex flex-1 justify-around m-0.5">
 
-            <motion.a
+            <motion.div
                 whileHover={{ scale: 1.2 }}
                 onHoverStart={e => {}}
                 onHoverEnd={e => {}}>
                  <a target="_blank" href="https://www.instagram.com/majora_impresiones/" > 
                     <GrInstagram className="text-gray-300 text-2xl"/> 
                 </a>
-            </motion.a>
+            </motion.div>
 
 
 
 
-            <motion.a
+            <motion.div
                 whileHover={{ scale: 1.2 }}
                 onHoverStart={e => {}}
                 onHoverEnd={e => {}}>
                 <a href="https://www.facebook.com/Majora.impresiones" >
                     <FaFacebookSquare className="text-gray-300 text-2xl m-0 p-0 "/>
                 </a>
-            </motion.a>
+            </motion.div>
 
-            <motion.a
+            <motion.div
                 whileHover={{ scale: 1.2 }}
                 onHoverStart={e => {}}
                 onHoverEnd={e => {}}>
                 <a href="https://majoraimpresiones.mercadoshops.com.ar/" target="_blank" >
                     <BsCart4 className="text-gray-300 text-2xl"/> 
                 </a>
-            </motion.a>
-            <motion.a
+            </motion.div>
+            <motion.div
                 whileHover={{ scale: 1.2 }}
                 onHoverStart={e => {}}
                 onHoverEnd={e => {}}>
@@ -52,8 +52,8 @@ const Footer = ()=>{
                     <FaYoutube className="text-gray-300 text-2xl"/>
                 </a>
 
-            </motion.a>
-            <motion.a
+            </motion.div>
+            <motion.div
                 whileHover={{ scale: 1.2 }}
                 onHoverStart={e => {}}
                 onHoverEnd={e => {}}>
@@ -61,7 +61,7 @@ const Footer = ()=>{
                     <FaTiktok className="text-gray-300 text-2xl"/>
                 </a>
 
-            </motion.a>
+            </motion.div>
                
         
             </div>

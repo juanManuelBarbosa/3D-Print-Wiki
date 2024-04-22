@@ -1,13 +1,80 @@
-import {motion} from 'framer-motion'
-
-import {Input ,Switch, cn} from '@nextui-org/react'
-
+import React , {useState} from 'react'
 import Navbar from '../Navbar'
 import Footer from '../Footer'
 import Header from '../Header'
-
+import InputCalculator from './InputCalculator'
+import CalculatorInfo from './CalculatorInfo'
+import {Select, SelectItem} from '@nextui-org/react'
+import { FaArrowRight } from "react-icons/fa";
 
 const Calculator = ({theme, changeTheme})=>{
+    let precioDeBobina;
+    let gramosUtilizados
+    let horasDeImpresion;
+    let luzXHora; 
+    let costoExtra;
+    let pintado;
+    let gastoEnergetico; 
+
+    const [nombreDeLaPieza, setNombreDeLaPieza] = useState('a');
+    const [costoMaterial, setCostoMaterial] = useState('');
+    const [gastoLuz, setGastoLuz] = useState('');
+    
+   
+    
+    //evento que recopila los inputs y su valor 
+    const handleButtonClick = (e)=> {
+        e.preventDefault(); 
+
+        //manejo de los input para controlar que esten todos los datos 
+        async function processData(ValoresInputs){
+            if(ValoresInputs.length === 7){
+                await asingValues(ValoresInputs)
+                calcularValores()
+
+            }else{
+                console.log('hubo un errror ')  // <<< aca se va a manejar proximamente los errores de la calculadora 
+            }
+        }
+
+        //recolecta todos los elementos y los almacena dentro de un array
+        const inputs = document.querySelectorAll('input[type="text"], input[type="number"] ');
+        const ValoresInputs = [];
+        let focusSet = false //variable para evitar establecer el enfoque mas de una vez 
+
+        //recorrida de array y validacion de formulario 
+        inputs.forEach( (input)=>{
+            if(input.value.trim() === ''){
+                if(!focusSet){
+                    input.focus()
+                    focusSet = true;
+                }     
+            }else{
+                input.value === '' ? input.focus :  ValoresInputs.push(input.value)
+            }
+        });
+        processData(ValoresInputs)
+}
+
+//una vez recopilados y validados  todos los valores se almacenan en variables individuales
+const asingValues = async(ValoresInputs) => { 
+     setNombreDeLaPieza(ValoresInputs[0]);
+     precioDeBobina = parseInt(ValoresInputs[1]);  
+     gramosUtilizados = parseInt(ValoresInputs[2]); 
+     horasDeImpresion = parseInt(ValoresInputs[3]); 
+     luzXHora = parseInt(ValoresInputs[4]);
+     costoExtra = parseInt(ValoresInputs[5]); 
+     pintado = ValoresInputs[6];
+}
+
+const calcularValores = () =>{
+    gastoEnergetico = horasDeImpresion * luzXHora;
+    setCostoMaterial((gramosUtilizados * precioDeBobina) / 1000);
+    costoBase = (gastoEnergetico + costoMaterial + costoExtra) * 2 ; 
+    pintado ? costoTotal = costoBase * 2  : costoTotal = costoBase * 3 
+}
+
+
     return <> 
         <Navbar theme={theme} changeTheme={changeTheme}/>
             <Header headerBanner='https://i.ibb.co/sqS6j03/3.png' 
@@ -15,129 +82,49 @@ const Calculator = ({theme, changeTheme})=>{
               theme={theme}
               />
            <div className='flex gap-2'>
-                <section className='basis-1/2'>
+                <section  className={theme === 'light' ? 
+                    'basis-1/2 p-5 m-4 border border-fuchsia-950 border-3 rounded-lg bg-slate-950/40' 
+                    :' basis-1/2 p-5 m-4 border border-gray-400 border-3 rounded-lg bg-slate-500/40' }>
                     <form action=""
                     className={theme === 'light' ? 
-                    'flex flex-col items-center gap-2 justify-center p-6 m-5 border border-fuchsia-950 border-3 rounded-lg bg-slate-950/40' 
-                    :'flex flex-col items-center gap-2 justify-center p-6 m-5 border border-gray-400 border-3 rounded-lg bg-slate-500/40' }
-                    >
+                    'flex flex-col items-center gap-2 justify-center  ' 
+                    :'flex flex-col items-center gap-2 justify-center  ' }
+                    >  
+                        <InputCalculator label={"Nombre de la pieza"} id={"NombreDeLaPieza"} />
+                    
+                        <InputCalculator label={"Precio Filamento por Kg"} id={"PrecioFilamento"} />
+                    
+                        <InputCalculator label={"Gramos utilizados"} id={"GramosPieza"} />
+                    
+                        <InputCalculator label={"Horas de Impresion"} id={"HorasDeImpresion"} />
 
-                    
-                    <motion.div
-                    className='w-full rounded-xl'
-                    whileHover={{ scale: 1.03 }}
-                     transition={{ duration: 0.3 }}
-                    >
-                    <Input 
-                    type="number" 
-                    label="Nombre de la pieza"  
-                    className='w-full'  
-                    color='content' 
-                    variant='faded'
-                    classNames={{
-                    label: "text-slate-200",
-                    inputWrapper: "bg-fuchsia-950 border-1 border-slate-800 text-slate-200"} }  />
-                    </motion.div> 
-                    
-                    <motion.div
-                    className='w-full rounded-xl'
-                    whileHover={{ scale: 1.03 }}
-                     transition={{ duration: 0.3 }}
-                    >
-                    <Input 
-                    type="number" 
-                    label="Precio Bobina Kg"  
-                    className='w-full'  
-                    color='content' 
-                    variant='faded'
-                    classNames={{
-                    label: "text-slate-200",
-                    inputWrapper: "bg-fuchsia-950 border-1 border-slate-800 text-slate-200"} }  />
-                    </motion.div> 
-                    
+                        <div className='w-full gap-3 flex justify-between items-center'>
+                            <InputCalculator label={"Gasto de Luz por Hora"} id={"NombreDeLaPieza"} / >
+                            <FaArrowRight />
+                            <a className='p-1 text-center text-gray-200 rounded-md bg-fuchsia-950/90' href="">como se calcula?</a>
+                        </div>
 
-                    <motion.div
-                    className='w-full rounded-xl'
-                    whileHover={{ scale: 1.03 }}
-                     transition={{ duration: 0.3 }}
-                    >
-                    <Input 
-                    type="number" 
-                    label="Gramos utilizados"  
-                    className='w-full'  
-                    color='content' 
-                    variant='faded'
-                    classNames={{
-                    label: "text-slate-200",
-                    inputWrapper: "bg-fuchsia-950 border-1 border-slate-800 text-slate-200"} }  />
-                    </motion.div>   
-                    
-                    <motion.div
-                    className='w-full rounded-xl'
-                    whileHover={{ scale: 1.03 }}
-                     transition={{ duration: 0.3 }}>
-                        <Input 
-                        type="number" 
-                        label="Horas de impresion"  
-                        className='w-full ' 
-                        color='content' 
-                        variant='faded'
-                        classNames={{
-                        label: "text-slate-200",
-                        inputWrapper: "bg-fuchsia-950 border-1 border-slate-800 text-slate-200"} }  />
-                    </motion.div>
+                        <InputCalculator label={"Costo Extra"} id={"CostoExtra"} />
 
-                    <motion.div
-                    className='w-full rounded-xl'
-                    whileHover={{ scale: 1.03 }}
-                     transition={{ duration: 0.3 }}>
-                        <Input 
-                        type="number" 
-                        label="Costo extra"  
-                        className='w-full rounded-xl ' 
-                        color='content' 
-                        variant='faded'
-                        classNames={{
-                        label: "text-slate-200",
-                        inputWrapper: "bg-fuchsia-950 border-1 border-slate-800 text-slate-200"} }  
-                        /> 
-                    </motion.div>
-
-                    
-                
-                    <Switch
-                            color="secondary"
-                            classNames={{
-                                base: cn(
-                                "inline-flex flex-row-reverse w-2/4 bg-content1 hover:bg-content2 items-center",
-                                "justify-between cursor-pointer rounded-lg gap-2 p-4 border-2 border-transparent",
-                                "data-[selected=true]:border-secondary",
-                                ),
-                                wrapper: "p-0 h-4 overflow-visible",
-                                thumb: cn("w-6 h-6 border-2 shadow-lg",
-                                "group-data-[hover=true]:border-secondary",
-                                //selected
-                                "group-data-[selected=true]:ml-6",
-                                // pressed
-                                "group-data-[pressed=true]:w-7",
-                                "group-data-[selected]:group-data-[pressed]:ml-4",
-                                ),
-                            }}>
-                            <div className="flex flex-col gap-1">
-                                <p className="text-medium">¿La pieza esta pintada?</p>
-                                <p className="text-tiny text-default-400">
-                                Estimado en relacion al tamaño de la pieza, usar como referencia 
-                                </p>
-                            </div>
-                    </Switch>
-                   
-                   <button className='w-52 border-black-2 border-black border-2 p-2 rounded-md bg-fuchsia-900 text-gray-200 shadow'> Calcular </button>
+                        <Select label='Pieza pintada?' className="max-w-xs"  >
+                            <SelectItem key={true} value={true}>si</SelectItem>
+                            <SelectItem key={false} value={false}>no</SelectItem>
+                        </Select>  
+                       
+                        <button className='w-52 border-black-2 border-black border-2 p-2 rounded-md bg-fuchsia-900 text-gray-200 shadow' onClick={handleButtonClick}> Calcular </button>
                     </form> 
+
                 </section>
-                <section className='basis-1/2 border border-black'>
-                    <h2>response</h2>
-                    <p>Aca voy a crear una lista detallada con el precio el gasto energetico y todo lo necesario</p>
+
+                <section className={theme === 'light' ? 
+                    'basis-1/2 p-5 m-4 border border-fuchsia-950 border-3 rounded-lg bg-slate-950/40' 
+                    :' basis-1/2 p-5 m-4 border border-gray-400 border-3 rounded-lg bg-slate-500/40' }>
+
+                <CalculatorInfo NombreDeLaPieza={nombreDeLaPieza} />
                 </section>
+
+                
+
            </div>
            
            
