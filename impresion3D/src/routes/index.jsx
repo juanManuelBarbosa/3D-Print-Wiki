@@ -4,7 +4,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
-import Calculator from "../Components/Cost Calculator/Calculator";
+import Calculator from "../Components/Cost Calculator/CalculatorContainer";
 import FrequentQuestions from "../Components/frequent questions/FrequentQuestions";
 import ListOfProblems from "../Components/list of problems/ListOfProblems";
 import Error404 from "../Components/Error404";
