@@ -28,7 +28,7 @@ const MyRoutes = ({changeTheme , theme}) => {
     },
     {
       path: "/calculadora-Documentacion",
-      element: <CalculatorDocumentation theme={theme}/>
+      element: <CalculatorDocumentation changeTheme={changeTheme} theme={theme}/>
       }
   ]);
 

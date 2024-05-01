@@ -8,17 +8,13 @@ import ThemeSwitch from './ThemeSwitch/ThemeSwitch.jsx'
 export default function Nav({changeTheme}) {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
-  const menuItems = [
-    "Gia de Problemas",
-    "Preguntas Frecuentes",
-    "Calculadora De Costos"
-  ];
+  
 
   return (
    
     
-    <Navbar onMenuOpenChange={setIsMenuOpen} className=" bg-gradient-to-r from-[#3d0b40] to-fuchsia-800  h-20 flex" >
-      <NavbarContent>
+    <Navbar onMenuOpenChange={setIsMenuOpen} className=" bg-gradient-to-r from-[#3d0b40] to-fuchsia-800  h-20 flex   justify-center" >
+      <NavbarContent  >
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           className="sm:hidden text-slate-300"
@@ -52,25 +48,32 @@ export default function Nav({changeTheme}) {
         </NavbarItem>
 
       </NavbarContent>
-
-
+      
       <NavbarContent >
           <ThemeSwitch changeTheme={changeTheme}/>  {/* boton para cambiar el tema claro oscuro pendiente.... */}
       </NavbarContent>
 
 
-      <NavbarMenu  className="w-4/6 rounded-md shadow h-40">
-        {menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item}-${index}`}>
-            <p
-              color={"foreground"}
-              href="#"
-              size="xl"    
-            >
-              {item}
+      <NavbarMenu  className="w-4/6 rounded-md shadow h-40 pt-20 flex gap-10  ">
+        
+          <NavbarMenuItem className="text-3xl">
+            <p color={"foreground"} href="#" >
+              <a href="/">Guia de Problemas</a>
             </p>
           </NavbarMenuItem>
-        ))}
+
+          <NavbarMenuItem className="text-3xl">
+            <p color={"foreground"} href="#" size="xl">
+              <a href="/preguntas-frecuentes">Preguntas Frecuentes</a>
+            </p>
+          </NavbarMenuItem>
+
+          <NavbarMenuItem className="text-3xl">
+            <p color={"foreground"} href="#" size="xl">
+              <a href="/calculadora-costos">Calculadora de costos </a>
+            </p>
+          </NavbarMenuItem>
+        
       </NavbarMenu>
     </Navbar>
 

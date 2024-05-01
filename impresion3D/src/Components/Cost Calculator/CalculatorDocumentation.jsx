@@ -1,12 +1,12 @@
 import Navbar from '../Navbar'
 import Footer from '../Footer'
-import { navbar } from '@nextui-org/react'
 
 
-const CalculatorDocumentation = ({theme})=>{
+
+const CalculatorDocumentation = ({theme , changeTheme})=>{
     
     return (<>
-    <Navbar/>
+    <Navbar theme={theme} changeTheme={changeTheme} />
        <div className={theme === 'light' ? "p-3 mx-auto w-11/12 text-fuchsia-950"
        : "p-3 mx-auto w-11/12 text-slate-300"} >
     <h2 className="text-3xl text-center mb-6">¿Qué es y cómo funciona la calculadora de costos?</h2>
