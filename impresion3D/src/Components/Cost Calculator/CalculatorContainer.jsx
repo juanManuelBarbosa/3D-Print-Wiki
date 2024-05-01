@@ -83,9 +83,9 @@ const handleButtonClick = (e)=> {
         <Navbar theme={theme} changeTheme={changeTheme}/>
 
             <Header headerBanner='https://i.ibb.co/sqS6j03/3.png' 
-            headerText="pequeña calculadora que sirve para establecer un precio adecuado que podes usar de referencia para tus piezas que tiene en cuenta diversos factores como el gasto energetico, el costo de los materiales entre otras cosas "
+            headerText="Herramienta que sirve para establecer un precio adecuado que podes usar de referencia para tus piezas que tiene en cuenta diversos factores como el gasto energetico, el costo de los materiales desgaste de la maquina y mas!  "
             theme={theme}
-            />
+            /> 
 
         <div className='flex gap-2 flex-col md:flex-row'>
             <section  className={theme === 'light' ? 
@@ -108,8 +108,7 @@ const handleButtonClick = (e)=> {
                 </section>
            </div> 
 
-           <CalculatorDocumentation 
-           theme={theme}/>
+           
 
         <Footer/>
      </>

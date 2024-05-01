@@ -12,7 +12,7 @@ const Header = ({ headerText, headerBanner , theme }) => {
       />
       <motion.p
         className={theme === 'light' ?
-        'text-[#3d0b40] w-10/12 mx-auto mb-10 mt-10 text-center xl:text-xl md:text-md' 
+        'text-fuchsia-950 w-10/12 mx-auto mb-10 mt-10 text-center xl:text-xl md:text-md' 
         : 'text-[#fff] w-10/12 mx-auto mb-10 mt-10 text-center xl:text-xl md:text-md'}  //estilos condicionales
         initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: 1, x: 0 }}

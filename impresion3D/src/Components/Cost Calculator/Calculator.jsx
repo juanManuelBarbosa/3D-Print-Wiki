@@ -21,7 +21,7 @@ const Calculator = ({theme, handleButtonClick})=>{
                     <div className='w-full gap-3 flex justify-between items-center'>
                         <InputCalculator label={"Gasto de Luz por Hora"} id={"NombreDeLaPieza"} / >
                         <FaArrowRight />
-                        <a className='p-1 text-center text-gray-200 rounded-md bg-fuchsia-950/90' href="">como se calcula?</a>
+                        <a className='p-1 text-center text-gray-200 rounded-md bg-fuchsia-950/90' href="/calculadora-Documentacion">como se calcula?</a>
                     </div>
 
                     <InputCalculator label={"Costo Extra"} id={"CostoExtra"} />

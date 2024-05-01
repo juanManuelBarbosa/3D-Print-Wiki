@@ -8,7 +8,7 @@ import Calculator from "../Components/Cost Calculator/CalculatorContainer";
 import FrequentQuestions from "../Components/frequent questions/FrequentQuestions";
 import ListOfProblems from "../Components/list of problems/ListOfProblems";
 import Error404 from "../Components/Error404";
-
+import CalculatorDocumentation from "../Components/Cost Calculator/CalculatorDocumentation";
 
 const MyRoutes = ({changeTheme , theme}) => {
   
@@ -25,7 +25,11 @@ const MyRoutes = ({changeTheme , theme}) => {
     {
       path: "/calculadora-costos",
       element: <Calculator changeTheme={changeTheme} theme={theme} />
-    }
+    },
+    {
+      path: "/calculadora-Documentacion",
+      element: <CalculatorDocumentation theme={theme}/>
+      }
   ]);
 
   return (

@@ -11,8 +11,7 @@ export default function Nav({changeTheme}) {
   const menuItems = [
     "Gia de Problemas",
     "Preguntas Frecuentes",
-    "Calculadora De Costos",
-    "Sobre Nosotros",
+    "Calculadora De Costos"
   ];
 
   return (
@@ -50,12 +49,6 @@ export default function Nav({changeTheme}) {
             <Link to='/calculadora-costos'>
               <p  className="text-gray-300 text-sm" > Calculadora de costos  </p>
           </Link>
-        </NavbarItem>
-
-        <NavbarItem className=" w-2/12 ">
-          <p className="text-slate-400 text-sm underline" >
-            Sobre Nosotros
-          </p>
         </NavbarItem>
 
       </NavbarContent>
