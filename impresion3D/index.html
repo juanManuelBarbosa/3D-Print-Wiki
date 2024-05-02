@@ -5,6 +5,29 @@
     <link rel="icon" type="image/svg+xml" href="https://http2.mlstatic.com/storage/mshops-appearance-api/images/94/46961294/logo-2023020410355415900.webp" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Guia Majora Impresiones</title>
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-analytics.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+    
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyAyPFZCO999rWS71ntTwjR9EkWSsFzaLGY",
+        authDomain: "guia-majora-impresiones.firebaseapp.com",
+        projectId: "guia-majora-impresiones",
+        storageBucket: "guia-majora-impresiones.appspot.com",
+        messagingSenderId: "854969092834",
+        appId: "1:854969092834:web:a5a64942c336042970ecbb",
+        measurementId: "G-67DXP4S728"
+      };
+    
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    </script>
   </head>
   <body >
     <div id="root"></div>

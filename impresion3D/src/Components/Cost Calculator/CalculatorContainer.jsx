@@ -4,7 +4,7 @@ import Footer from '../Footer'
 import Header from '../Header'
 import Calculator from './Calculator'
 import CalculatorInfo from './CalculatorInfo'
-import CalculatorDocumentation from './CalculatorDocumentation'
+
 
 
 
@@ -82,7 +82,7 @@ const handleButtonClick = (e)=> {
     return <> 
         <Navbar theme={theme} changeTheme={changeTheme}/>
 
-            <Header headerBanner='https://i.ibb.co/sqS6j03/3.png' 
+            <Header headerBanner='https://i.ibb.co/FJPNgFC/Banner-de-Linked-In-Trabajo-Sencillo-3.png' 
             headerText="Herramienta que sirve para establecer un precio adecuado que podes usar de referencia para tus piezas que tiene en cuenta diversos factores como el gasto energetico, el costo de los materiales desgaste de la maquina y mas!  "
             theme={theme}
             /> 

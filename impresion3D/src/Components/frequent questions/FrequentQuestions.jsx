@@ -8,7 +8,7 @@ const FrequentQuestions = ({theme , changeTheme})=> {
   return <>
   <Navbar changeTheme={changeTheme} theme={theme}/>
 
-   <Header headerBanner='https://i.ibb.co/T2BJ4ND/2.png'
+   <Header headerBanner='https://i.ibb.co/sskQn7t/Banner-de-Linked-In-Trabajo-Sencillo-2.png'
     headerText="Recopliamos un conjunto de preguntas frecuentes que creemos que pueden surgir al empezar en el mundo de la impresion 3d o incluso antes de hacerlo , si tu pregunta no aparece en la lista no dudes en comunicarte con nosotros que intentaremos no solo solucionarla sino tambien la incluieremos aqui para que otras personas que tengan la misma duda puedan resolverla mas facil gracias a vos"
     
     theme={theme}/>

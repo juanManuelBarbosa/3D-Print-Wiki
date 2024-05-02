@@ -5,7 +5,7 @@ const Header = ({ headerText, headerBanner , theme }) => {
     <>
       <motion.img
         src={headerBanner}
-        className="w-full max-h-52"
+        className="w-full border-gray-950 border-b-3 shadow-xl"
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}
