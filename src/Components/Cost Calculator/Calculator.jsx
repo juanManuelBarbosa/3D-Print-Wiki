@@ -22,9 +22,9 @@ const Calculator = ({theme, handleButtonClick})=>{
                         <InputCalculator label={"Gasto de Luz por Hora"} id={"NombreDeLaPieza"} / >
                         <FaArrowRight />
                         <Link to='/calculadora-Documentacion'>
-                            <a  className="text-gray-300 text-sm" >
-                            Gia de Problemas
-                            </a>
+                            <p  className="text-gray-300 text-sm" >
+                            ¿Como se calcula?
+                            </p>
                         </Link>
                         
                     </div>
