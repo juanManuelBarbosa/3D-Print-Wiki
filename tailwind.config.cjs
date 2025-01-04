@@ -1,8 +1,8 @@
-// tailwind.config.js
-import { nextui } from "@nextui-org/react";
+// Renombrar archivo a tailwind.config.cjs
+const { nextui } = require("@nextui-org/react");
 
 /** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
   content: [
     "./index.html", "./src/**/*.{js,ts,jsx,tsx}", "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
