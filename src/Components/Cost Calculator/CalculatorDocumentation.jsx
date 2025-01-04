@@ -3,12 +3,11 @@ import Footer from '../Footer'
 
 
 
-const CalculatorDocumentation = ({theme , changeTheme})=>{
+const CalculatorDocumentation = ()=>{
     
     return (<>
-    <Navbar theme={theme} changeTheme={changeTheme} />
-       <div className={theme === 'light' ? "p-3 mx-auto w-11/12 text-fuchsia-950"
-       : "p-3 mx-auto w-11/12 text-slate-300"} >
+    <Navbar />
+       <div className={"p-3 mx-auto w-11/12 text-fuchsia-950"} >
     <h2 className="text-3xl text-center mb-6">¿Qué es y cómo funciona la calculadora de costos?</h2>
     <section className="space-y-4">
         <p className="text-lg">La calculadora de costos es una herramienta esencial para cotizar impresiones en 3D de manera precisa. 
@@ -55,8 +54,7 @@ const CalculatorDocumentation = ({theme , changeTheme})=>{
     </ul>
 </div>
 
-<div id='Explicacion' className={theme === 'light' ? "p-3 mx-auto w-11/12 text-fuchsia-950"
-       : "p-3 mx-auto w-11/12 text-slate-300"} >
+<div id='Explicacion' className={ "p-3 mx-auto w-11/12 text-fuchsia-950"} >
     <h2 className="text-3xl  mb-6">¿Cómo se calcula el costo de la luz?</h2>
     
     <section className="space-y-4 text-lg">

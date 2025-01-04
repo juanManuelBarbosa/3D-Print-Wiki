@@ -1,45 +1,42 @@
-import {Select, SelectItem} from '@nextui-org/react'
 import { FaArrowRight } from "react-icons/fa";
 import InputCalculator from './InputCalculator';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-const Calculator = ({theme, handleButtonClick})=>{
-    return(<>
-         <form action=""
-                className={theme === 'light' ? 
-                'flex flex-col items-center gap-2 justify-center' 
-                :'flex flex-col items-center gap-2 justify-center' }
-                >  
-                    <InputCalculator label={"Nombre de la pieza"} id={"NombreDeLaPieza"}  />
-                    
-                    <InputCalculator label={"Precio Filamento por Kg"} id={"PrecioFilamento"} />
-                    
-                    <InputCalculator label={"Gramos utilizados"} id={"GramosPieza"} />
-                    
-                    <InputCalculator label={"Horas de Impresion"} id={"HorasDeImpresion"} />
+const Calculator = ({ handleButtonClick }) => {
+    return (
+        <>
+            <form
+                action=""
+                className="flex flex-col items-center gap-4 h-full justify-around"
+            >
+                {/* Precio Filamento por Kg */}
+                <InputCalculator label={"Precio Filamento por Kg"} id={"PrecioFilamento"} />
 
-                    <div className='w-full gap-3 flex justify-between items-center'>
-                        <InputCalculator label={"Gasto de Luz por Hora"} id={"NombreDeLaPieza"} / >
-                        <FaArrowRight />
-                        <Link to='/calculadora-Documentacion'>
-                            <p  className="text-gray-300 text-sm" >
-                            ¿Como se calcula?
-                            </p>
-                        </Link>
-                        
-                    </div>
+                {/* Gramos Utilizados */}
+                <InputCalculator label={"Gramos utilizados"} id={"GramosPieza"} />
 
-                    <InputCalculator label={"Costo Extra"} id={"CostoExtra"} />
+                {/* Horas de Impresión */}
+                <InputCalculator label={"Horas de Impresión"} id={"HorasDeImpresion"} />
 
-                    <Select label='Pieza pintada?' className="max-w-xs"  >
-                        <SelectItem key={true} value={true}>si</SelectItem>
-                        <SelectItem key={false} value={false}>no</SelectItem>
-                    </Select>  
-                       
-                    <button className='w-52 border-black-2 border-black border-2 p-2 rounded-md bg-fuchsia-900 text-gray-200 shadow' onClick={handleButtonClick}> Calcular </button>
-                    </form> 
-    
-    </>)
+                {/* Gasto de Luz y Enlace */}
+                <div className='w-full flex justify-between items-center'>
+                    <InputCalculator label={"Gasto de Luz por Hora"} id={"NombreDeLaPieza"} />
+                    <FaArrowRight />
+                    <Link to='/calculadora-Documentacion'>
+                        <p className="text-gray-300 text-sm">¿Cómo se calcula?</p>
+                    </Link>
+                </div>
+
+                {/* Botón Calcular */}
+                <button
+                    className="w-52 border-black-2 border-black border-2 p-2 rounded-md bg-fuchsia-900 text-gray-200 shadow mt-4"
+                    onClick={handleButtonClick}
+                >
+                    Calcular
+                </button>
+            </form>
+        </>
+    );
 }
 
-export default Calculator
+export default Calculator;

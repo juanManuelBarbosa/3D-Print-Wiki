@@ -1,13 +1,9 @@
 import React from "react"
-const CalculatorInfo = ({NombreDeLaPieza, costoMaterial, gastoEnergetico , costoTotal })=>{
+const CalculatorInfo = ({ costoMaterial, gastoEnergetico , costoTotal })=>{
     let total = costoTotal / 2
    return (<>
             <div className="flex flex-col items-around text-gray-200 h-full justify-around text-xl">
-                <div className="flex justify-between   ">
-                    <p>Nombre de la impresion:</p>
-                    <p>{NombreDeLaPieza}</p>
-                </div>
-
+                
                 <div className="flex justify-between">
                     <p>Costo de Material utilizado:</p>
                     <p>{`$${costoMaterial}`}</p>
@@ -18,11 +14,6 @@ const CalculatorInfo = ({NombreDeLaPieza, costoMaterial, gastoEnergetico , costo
                     <p>{`$${gastoEnergetico}`}</p>
                 </div>
 
-                
-                <div className="flex justify-between">
-                    <p>Porcentaje Reinvercion </p>
-                    <p>{`$${total}`}</p>
-                </div>
             
                 <div className="flex justify-between">
                     <p>Ganancia neta</p>

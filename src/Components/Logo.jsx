@@ -1,14 +1,15 @@
-
-const Logo = ()=>{
-    return <>
-    <div className='flex items-center w-52  h-auto   pt-7'>
+const Logo = () => {
+    return (
+      <div className="flex items-center pt-7">
+        {/* Aseguramos un tamaño completamente fijo para la imagen */}
         <img 
-        className='w-11/12  p-0 m-0 '
-        src="https://http2.mlstatic.com/storage/mshops-appearance-api/images/94/46961294/logo-2023020410355415900.webp" 
-        alt="LOGO" 
+          src="https://krakenstl.wordpress.com/wp-content/uploads/2024/06/krakenstl-logo.png?resize=219%2C219" 
+          alt="LOGO" 
+          style={{ width: "100px", height: "100px", objectFit: "contain" }} // Tamaño fijo para la imagen
         />
-        
-    </div>
-    </>
-}
-export default Logo
+      </div>
+    );
+  };
+  
+  export default Logo;
+  
